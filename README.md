@@ -57,16 +57,16 @@ chmod +x service.sh
 This will start the llama-server with the VLM model, listening on port 8080.
 
 ### Access the Demo Interface
-Open `demo.html` in your web browser:
+Open `webcam-demo.html` in your web browser:
 ```bash
-xdg-open demo.html
+xdg-open webcam-demo.html
 ```
 
 Or alternatively, you can serve the file using a simple HTTP server:
 ```bash
 python3 -m http.server 8000
 ```
-Then navigate to `http://localhost:8000/demo.html` in your browser.
+Then navigate to `http://localhost:8000/webcam-demo.html` in your browser.
 
 ### Using the Demo
 
@@ -158,7 +158,7 @@ This project is licensed under the Apache License 2.0 - see the LICENSE file for
 
 3. **Open the demo interface**:
    ```bash
-   xdg-open demo.html
+   xdg-open webcam-demo.html
    ```
 
 4. **Use the demo**:
