@@ -4,22 +4,22 @@ import requests
 import time
 import threading
 
-# 配置
-BASE_URL = "http://localhost:8080"  # 你的 API 地址
-INSTRUCTION = "What do you see?"     # 默认指令
-INTERVAL = 0.5                       # 请求间隔（秒）
+# Configuration
+BASE_URL = "http://localhost:8080"  # Your API endpoint
+INSTRUCTION = "What do you see?"     # Default instruction
+INTERVAL = 0.5                       # Request interval (seconds)
 STOP_FLAG = False
 
 def capture_frame():
-    """捕获摄像头画面并返回 Base64 编码图像"""
+    """Capture camera frame and return Base64 encoded image"""
     cap = cv2.VideoCapture(0)
     if not cap.isOpened():
-        print("无法访问摄像头")
+        print("Cannot access camera")
         return None
 
     ret, frame = cap.read()
     if not ret:
-        print("无法读取帧")
+        print("Cannot read frame")
         return None
 
     _, buffer = cv2.imencode('.jpg', frame)
@@ -28,7 +28,7 @@ def capture_frame():
     return f"data:image/jpeg;base64,{img_str}"
 
 def send_request(instruction, image_base64):
-    """发送请求并返回响应"""
+    """Send request and return response"""
     payload = {
         "max_tokens": 100,
         "messages": [
@@ -46,11 +46,11 @@ def send_request(instruction, image_base64):
         response = requests.post(f"{BASE_URL}/v1/chat/completions", json=payload)
         if response.status_code == 200:
             data = response.json()
-            return data.get("choices", [{}])[0].get("message", {}).get("content", "无响应")
+            return data.get("choices", [{}])[0].get("message", {}).get("content", "No response")
         else:
-            return f"服务器错误: {response.status_code} - {response.text}"
+            return f"Server error: {response.status_code} - {response.text}"
     except Exception as e:
-        return f"请求失败: {str(e)}"
+        return f"Request failed: {str(e)}"
 
 def process_loop():
     global STOP_FLAG
@@ -58,13 +58,13 @@ def process_loop():
         image = capture_frame()
         if image:
             result = send_request(INSTRUCTION, image)
-            print(f"AI 响应: {result}")
+            print(f"AI Response: {result}")
         else:
-            print("无法捕获图像")
+            print("Cannot capture image")
         time.sleep(INTERVAL)
 
 def main():
-    print("摄像头已启动，按 Ctrl+C 停止")
+    print("Camera started, press Ctrl+C to stop")
     thread = threading.Thread(target=process_loop)
     thread.start()
 
@@ -75,8 +75,7 @@ def main():
         global STOP_FLAG
         STOP_FLAG = True
         thread.join()
-        print("程序已停止")
+        print("Program stopped")
 
 if __name__ == "__main__":
     main()
-
