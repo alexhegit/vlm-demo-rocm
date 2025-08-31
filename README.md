@@ -94,7 +94,7 @@ This repository also includes a more advanced web-based demo interface that allo
 2. Place your images in the `images/` directory
 3. Run the web demo:
    ```bash
-   ./web_demo.sh
+   ./web-demo.sh
    ```
 4. The web interface will automatically open in your browser at `http://localhost:5000`
 5. Use the interface to browse images and run inference
@@ -191,4 +191,4 @@ When you click "Start", the system will:
 
 ## Benchmarking
 
-For detailed instructions on how to benchmark the VLM performance, please refer to the [benchmark.md](benchmark.md) documentation.
+For detailed instructions on how to benchmark the VLM performance, please refer to the [benchmark.py](benchmark.py) documentation.
