@@ -102,6 +102,10 @@ This repository also includes a more advanced web-based demo interface that allo
 ### Requirements
 - Python 3.x
 - Flask and Flask-CORS Python packages
+   ```shell
+   pip install flask>=3.1.1
+   pip install flask-cors>=6.0.1
+   ```
 - Images in the `images/` directory
 - VLM service running on `http://localhost:8080`
 
