@@ -191,4 +191,4 @@ When you click "Start", the system will:
 
 ## Benchmarking
 
-For detailed instructions on how to benchmark the VLM performance, please refer to the [benchmark.py](benchmark.py) documentation.
+For detailed instructions on how to benchmark the VLM performance, please refer to the [benchmark.md](benchmark.md) documentation.
