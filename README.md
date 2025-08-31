@@ -78,6 +78,39 @@ Then navigate to `http://localhost:8000/demo.html` in your browser.
 6. View the AI-generated responses in the "Response" area
 7. Click "Stop" to halt processing
 
+## Web Demo (Alternative Interface)
+
+This repository also includes a more advanced web-based demo interface that allows browsing and analyzing images from a local directory.
+
+### Features
+- Browse images from the `images/` directory
+- Run VLM inference on individual images
+- View inference results with timing metrics
+- Keyboard navigation support (arrow keys, spacebar)
+- Responsive web interface with modern UI
+
+### How to Use
+1. Ensure the VLM service is running (`./service.sh`)
+2. Place your images in the `images/` directory
+3. Run the web demo:
+   ```bash
+   ./web_demo.sh
+   ```
+4. The web interface will automatically open in your browser at `http://localhost:5000`
+5. Use the interface to browse images and run inference
+
+### Requirements
+- Python 3.x
+- Flask and Flask-CORS Python packages
+- Images in the `images/` directory
+- VLM service running on `http://localhost:8080`
+
+### Additional Notes
+- The web demo will automatically detect and use images in the `images/` directory
+- Results are logged to `inference-result.json`
+- The demo supports keyboard navigation for quick image browsing
+- Press spacebar to run inference on the currently displayed image
+
 ## Configuration
 
 The service.sh script can be modified to use different models:
