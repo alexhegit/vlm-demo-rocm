@@ -40,4 +40,4 @@ echo "Press Ctrl+C to stop the server"
 echo "================================================"
 
 # Run the web demo
-python web_demo.py "$@"
+python web-demo.py "$@"
