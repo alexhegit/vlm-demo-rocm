@@ -188,3 +188,7 @@ When you click "Start", the system will:
 - AMD ROCm™ Platform
 - Qwen2.5-VL-3B-Instruct Model
 - llama.cpp for the server implementation
+
+## Benchmarking
+
+For detailed instructions on how to benchmark the VLM performance, please refer to the [benchmark.md](benchmark.md) documentation.
