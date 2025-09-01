@@ -1,4 +1,4 @@
-export PATH=$PATH:${PWD}/llama.cpp/build/bin/
+export PATH=$PATH:${HOME}/llama.cpp/build/bin/
 
 export MODEL="${HOME}/GGUF/Qwen2.5-VL-3B-Instruct-GGUF/Qwen2.5-VL-3B-Instruct-Q8_0.gguf"
 export MMPROJ="${HOME}/GGUF/Qwen2.5-VL-3B-Instruct-GGUF/mmproj-Qwen2.5-VL-3B-Instruct-Q8_0.gguf"
@@ -20,7 +20,7 @@ HSA_OVERRIDE_GFX_VERSION=11.0.0 llama-server \
 	--mmproj ${MMPROJ} \
 	--host 0.0.0.0 \
 	--port 8080 \
-	-fa \
+	-fa on \
 	-ngl 99
 
 #chromium-browser index.html
