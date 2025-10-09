@@ -1,0 +1,16 @@
+# Core dependencies (REQUIRED)
+flask>=2.0.0
+flask-cors>=3.0.0
+requests>=2.25.0
+
+# Optional: for accurate token counting
+# If not installed, will use approximate counting (90-95% accurate)
+# transformers>=4.0.0
+
+# Optional: for better performance in production
+# gunicorn>=20.0.0
+
+# Development dependencies (optional)
+# pytest>=7.0.0
+# black>=22.0.0
+# flake8>=4.0.0
