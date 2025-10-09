@@ -50,15 +50,17 @@ def load_tokenizer(tokenizer_path: Optional[str] = None) -> bool:
     global tokenizer
     
     if not tokenizer_path:
-        print("No tokenizer path provided. Using approximate token counting.")
+        # No tokenizer requested - this is fine
         return False
     
     if not TRANSFORMERS_AVAILABLE:
-        print("transformers library not available. Using approximate token counting.")
+        print("⚠ transformers library not installed. Using approximate token counting.")
+        print("  (Optional) Install with: pip install transformers")
         return False
     
     if not os.path.exists(tokenizer_path):
-        print(f"Tokenizer path does not exist: {tokenizer_path}")
+        print(f"⚠ Tokenizer path does not exist: {tokenizer_path}")
+        print("  Using approximate token counting instead.")
         return False
     
     try:
@@ -66,7 +68,8 @@ def load_tokenizer(tokenizer_path: Optional[str] = None) -> bool:
         print(f"✓ Loaded tokenizer from: {tokenizer_path}")
         return True
     except Exception as e:
-        print(f"✗ Failed to load tokenizer from {tokenizer_path}: {e}")
+        print(f"⚠ Failed to load tokenizer: {e}")
+        print("  Using approximate token counting instead.")
         return False
 
 
