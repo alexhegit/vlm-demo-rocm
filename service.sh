@@ -2,11 +2,11 @@ export PATH=$PATH:${HOME}/llamacpp-vulkan-b7132/build/bin/
 
 #export HSA_OVERRIDE_GFX_VERSION=11.0.0
 
-#export MODEL="${HOME}/GGUF/Qwen3VL-8B-Thinking-GGUF/Qwen3VL-8B-Thinking-Q4_K_M.gguf"
-#export MMPROJ="${HOME}/GGUF/Qwen3VL-8B-Thinking-GGUF/mmproj-Qwen3VL-8B-Thinking-Q8_0.gguf"
+export MODEL="${HOME}/GGUF/Qwen3-VL-4B-Instruct-GGUF/Qwen3-VL-4B-Instruct-Q4_K_M.gguf"
+export MMPROJ="${HOME}/GGUF/Qwen3-VL-4B-Instruct-GGUF/mmproj-F16.gguf"
 
-export MODEL="${HOME}/GGUF/SmolVLM2-500M-Video-Instruct-GGUF/SmolVLM2-500M-Video-Instruct-Q8_0.gguf"
-export MMPROJ="${HOME}/GGUF/SmolVLM2-500M-Video-Instruct-GGUF/mmproj-SmolVLM2-500M-Video-Instruct-Q8_0.gguf"
+#export MODEL="${HOME}/GGUF/SmolVLM2-500M-Video-Instruct-GGUF/SmolVLM2-500M-Video-Instruct-Q8_0.gguf"
+#export MMPROJ="${HOME}/GGUF/SmolVLM2-500M-Video-Instruct-GGUF/mmproj-SmolVLM2-500M-Video-Instruct-Q8_0.gguf"
 
 # VLM Service for AMD ROCm™
 # This script starts the llama-server with the Qwen2.5-VL-3B-Instruct model
